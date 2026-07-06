@@ -93,38 +93,6 @@ image_binarization.ipynb
 ```
 
 
-## :arrow_forward: Usage
-
-### **1. Visualization Demo**
-
-**1.1 Pixel-level Text (Stroke) Segmentation (for SAM-TS & Hi-SAM):**
-
-```
-python demo_hisam.py --checkpoint pretrained_checkpoint/sam_tss_l_hiertext.pth --model-type vit_l --input demo/2e0cb33320757201.jpg --output demo/
-```
-
-- `--checkpoint`: the model path.
-- `--model-type`: the backbone type. Use `vit_b` for ViT-Base backbone,  `vit_l` for ViT-Large,  `vit_h` for ViT-Huge. Use `vit_s` for ViT-S.
-- `--input`: the input image path.
-- `--output`: the output image path or folder.
-
-To achieve better quality on small texts using sliding window, run the following script:
-
-```
-python demo_hisam.py --checkpoint pretrained_checkpoint/sam_tss_l_hiertext.pth --model-type vit_l --input demo/2e0cb33320757201.jpg --output demo/2e0cb33320757201_sliding.png --patch_mode
-```
-
-- `--patch_mode`: enabling sliding window inference. The default patch size is 512×512, the stride is 384 (for HierText). You can adjust the setting for better result on your data.
-
-**1.2 Word, Text-line, and Paragraph Segmentation (for Hi-SAM)**
-
-Run the following script for promptable segmentation on demo/img293.jpg:
-
-```
-python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_l.pth --model-type vit_l --input demo/img293.jpg --output demo/ --hier_det
-```
-
-- `--hier_det`: enabling hierarchical segmentation. Hi-SAM predicts a word mask, a text-line mask, and a paragraph mask for each single-point prompt. See demo_hisam.py for the point position and details.
 
 ### **2. Evaluation**
 
