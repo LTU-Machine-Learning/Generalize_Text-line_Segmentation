@@ -1,0 +1,241 @@
+python demo_hisam.py --checkpoint pretrained_checkpoint/sam_tss_l_hiertext.pth --model-type vit_l --input demo/2e0cb33320757201.jpg --output demo/
+
+
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_l.pth --model-type vit_l --input demo/2e0cb33320757201.jpg --output out/ --hier_det
+
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_l.pth --model-type vit_l --input demo/2e0cb33320757201.jpg --output out/segment_img2e_hier_det.png --hier_det
+
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_l.pth --model-type vit_l --input out/segment_img2e_sliding_inv.png --output out/segment_img2e_bw_hier_det.png --hier_det
+
+
+
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_l.pth --model-type vit_l --input demo/0520-020.png --output out/ --hier_det
+
+
+python demo_hisam.py --checkpoint pretrained_checkpoint/sam_tss_l_totaltext.pth --model-type vit_l --input demo/065.jpg --output out/065_hi_2.png --hier_det
+
+
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_h.pth --model-type vit_h --input demo/065.jpg --output out/065_hi_3.png --hier_det
+
+
+
+python demo_text_detection.py --checkpoint pretrained_checkpoint/word_detection_totaltext.pth --model-type vit_h --input demo/img643.jpg --output out/ --dataset totaltext
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/img643.jpg --output out/img643_line.png --dataset totaltext
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/img643.jpg --output out/img643_line_ctw.png --dataset ctw1500
+
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/065.jpg --output out/065_line_ctw.png --dataset ctw1500
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/065.jpg --output out/065_line_totl.png --dataset totaltext
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/019.jpg --output out/019_line_ctw.png --dataset ctw1500
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/019.jpg --output out/019_line_totl.png --dataset totaltext
+
+python demo_text_detection.py --checkpoint pretrained_checkpoint/word_detection_totaltext.pth --model-type vit_h --input demo/019.jpg --output out/019_word_totl.png --dataset totaltext
+python demo_text_detection.py --checkpoint pretrained_checkpoint/word_detection_totaltext.pth --model-type vit_h --input demo/065.jpg --output out/065_word_totl.png --dataset totaltext
+
+python demo_text_detection.py --checkpoint pretrained_checkpoint/word_detection_totaltext.pth --model-type vit_h --input demo/065.jpg --output out/065_word_ctw.png --dataset ctw1500
+
+
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/065.jpg --output out/065_line_ctw2.png --dataset ctw1500 --seed 20
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/065.jpg --output out/065_line_ctw2.png --dataset ctw1500 --seed 20
+
+
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/ara_0.jpg --output out/ara_0_line.png --dataset ctw1500
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/ara_1.png --output out/ara_1_line.png --dataset ctw1500 --seed 20
+
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_h.pth --model-type vit_h --input demo/ara_1.png --output out/ara_1_bin.png --patch_mode --input_size [2048,2048]
+
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/AGS_CCA_CED_0251_0264.jpg --output out/AGS_CCA_CED_0251_0264_line2.png --dataset ctw1500 --seed 20
+
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_h.pth --model-type vit_h --input demo/AGS_CCA_CED_0251_0264.jpg --output out/AGS_CCA_CED_0251_0264_bin.png --patch_mode 
+
+
+########## READ_2016 ################################
+python demo_text_detection.py --checkpoint pretrained_checkpoint/word_detection_totaltext.pth --model-type vit_h --input demo/READ_2016/Seite0001.JPG --output out/READ_2016/Seite0001.JPG --dataset totaltext
+
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/READ_2016/Seite0001.JPG --output out/READ_2016/Seite0001.JPG --dataset ctw1500
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/READ_2016/Seite0002.JPG --output out/READ_2016/Seite0002.JPG --dataset ctw1500
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/READ_2016/Seite0003.JPG --output out/READ_2016/Seite0003.JPG --dataset ctw1500
+python demo_text_detection.py --checkpoint pretrained_checkpoint/line_detection_ctw1500.pth --model-type vit_h --input demo/READ_2016/Seite0004.JPG --output out/READ_2016/Seite0004.JPG --dataset ctw1500
+
+
+######### After Training with READ_2016 #################
+python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/READ_2016 --output logs/Hi-SAM_Doc/output_images/READ_2016 --dataset ctw1500
+
+python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/Simancas --output logs/Hi-SAM_Doc/output_images/Simancas --dataset ctw1500
+
+python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/bressay --output logs/Hi-SAM_Doc/output_images/bressay --dataset ctw1500
+
+
+---------------New Git----------------------
+python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/READ_2016 --output logs/Hi-SAM_Doc/output_images/READ_2016 --dataset ctw1500
+
+python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/Simancas --output logs/Hi-SAM_Doc/output_images/Simancas --dataset ctw1500
+
+python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/bressay --output logs/Hi-SAM_Doc/output_images/bressay --dataset ctw1500
+
+python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/READ_2016/Seite0405.JPG --output logs/Hi-SAM_Doc/output_images/READ_2016/Seite0405_t1.png --dataset ctw1500
+
+### capture the results from 3 models ###
+
+CUDA_VISIBLE_DEVICES=1 python codes/Hi-SAM_Doc/demo_text_detection_2.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_B.pth --model-type vit_b --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Validation/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 --new_csv True --res_csv score_thresh_B.csv --exp_id 7
+
+python codes/Hi-SAM_Doc/demo_text_detection_2.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_L.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Validation/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 --new_csv True --res_csv score_thresh_L.csv --exp_id
+
+CUDA_VISIBLE_DEVICES=2 python codes/Hi-SAM_Doc/demo_text_detection_2.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_H.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Validation/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 --new_csv True --res_csv score_thresh_H.csv --exp_id
+
+----
+CUDA_VISIBLE_DEVICES=1 python codes/Hi-SAM_Doc/demo_text_detection_2.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_B.pth --model-type vit_b --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Validation/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 --res_csv score_thresh_B.csv --exp_id 7
+
+CUDA_VISIBLE_DEVICES=2 python codes/Hi-SAM_Doc/demo_text_detection_2.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_L.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Validation/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 --res_csv score_thresh_L.csv --exp_id 8
+
+CUDA_VISIBLE_DEVICES=3 python codes/Hi-SAM_Doc/demo_text_detection_2.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_H.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Validation/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 --res_csv score_thresh_H.csv --exp_id 9
+
+
+CUDA_VISIBLE_DEVICES=3 python codes/Hi-SAM_Doc/demo_text_detection_2.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_H.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Validation/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 --new_csv True
+
+CUDA_VISIBLE_DEVICES=4 python codes/Hi-SAM_Doc/demo_text_detection_2.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_H.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/bressay --output logs/Hi-SAM_Doc/output_images3/bressay --dataset ctw1500 --new_csv True
+
+
+CUDA_VISIBLE_DEVICES=2 python codes/Hi-SAM_Doc/demo_text_detection_inf_time.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_L.pth --model-type vit_l --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 --res_csv score_thresh_L.csv --exp_id 8
+
+
+#################
+CUDA_VISIBLE_DEVICES=1 python codes/Hi-SAM_Doc/demo_text_detection_mAP.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/final_epoch_150_H_003.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 
+
+CUDA_VISIBLE_DEVICES=0 python codes/Hi-SAM_Doc/demo_text_detection_mAP.py --checkpoint logs/new/Hi-SAM_Doc/30_2025-08-27_ID_13985464/saved_model/READ_2016_best.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 
+
+CUDA_VISIBLE_DEVICES=1 python codes/Hi-SAM_Doc/demo_text_detection_mAP.py --checkpoint logs/new/Hi-SAM_Doc/30_2025-08-27_ID_13985464/saved_model/final_epoch_150.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 
+
+CUDA_VISIBLE_DEVICES=2 python codes/Hi-SAM_Doc/demo_text_detection_mAP.py --checkpoint logs/new/Hi-SAM_Doc/31_2025-08-27_ID_13985465/saved_model/READ_2016_best.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 
+
+CUDA_VISIBLE_DEVICES=3 python codes/Hi-SAM_Doc/demo_text_detection_mAP.py --checkpoint logs/new/Hi-SAM_Doc/31_2025-08-27_ID_13985465/saved_model/final_epoch_150.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 
+
+
+CUDA_VISIBLE_DEVICES=1 python codes/Hi-SAM_Doc/demo_text_detection_mAP.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_H_epc433.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 
+
+
+CUDA_VISIBLE_DEVICES=2 python codes/Hi-SAM_Doc/demo_text_detection_mAP.py --checkpoint logs/Hi-SAM_Doc/32_2025-09-02_ID_/saved_model/READ_2016_best.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 
+
+
+CUDA_VISIBLE_DEVICES=1 python codes/Hi-SAM_Doc/demo_text_detection_mAP.py --checkpoint logs/Hi-SAM_Doc/33_2025-09-02_ID_/saved_model/final_epoch_800.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 
+
+
+
+
+CUDA_VISIBLE_DEVICES=1 python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_H_003.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/Dag_Avango --output logs/Hi-SAM_Doc/output_images4/Dag_Avango/H003 --dataset ctw1500 
+
+
+CUDA_VISIBLE_DEVICES=3 python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/38_2025-09-11_ID_/saved_model/READ_2016_best.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/Dag_Avango --output logs/Hi-SAM_Doc/output_images4/Dag_Avango/H038 --dataset ctw1500 
+
+CUDA_VISIBLE_DEVICES=7 python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/46_2025-09-15_ID_/saved_model/READ_2016_best.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input logs/Hi-SAM_Doc/input_images/Dag_Avango --output logs/Hi-SAM_Doc/output_images4/Dag_Avango/H046 --dataset ctw1500 --save_boxes_dir logs/Hi-SAM_Doc/output_images4/Dag_Avango/H046
+
+
+
+final_epoch_800.pth
+
+## on DLA Data #
+
+CUDA_VISIBLE_DEVICES=7 python demo_text_detection_mAP.py \
+  --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth \
+  --model-type vit_h \
+  --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint \
+  --input ../../logs/Hi-SAM_Doc/input_images/DLA \
+  --output ../../logs/Hi-SAM_Doc/sample_output/H057/DLA/images \
+  --dataset ctw1500 \
+  --save_boxes true \
+  --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H057/DLA/boxes \
+  --nms 0.6 0.6
+
+
+
+### Export Boundary Boxes ####
+CUDA_VISIBLE_DEVICES=1 python codes/Hi-SAM_Doc/demo_text_detection_mAP.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_H_003.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Test/Images --output logs/Hi-SAM_Doc/sample_output --dataset ctw1500 --save_boxes True --save_boxes_dir logs/Hi-SAM_Doc/save_box
+
+
+
+../../DATASETS/READ_2016/Validation/Images/Seite0355.JPG
+
+####### for Binarization ##############
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_h.pth --model-type vit_h --input ../../DATASETS/READ_2016/Training/Images --output ../../DATASETS/READ_2016/Training/labels --patch_mode 
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_h.pth --model-type vit_h --input ../../DATASETS/READ_2016/Validation/Images --output ../../DATASETS/READ_2016/Validation/labels --patch_mode 
+python demo_hisam.py --checkpoint pretrained_checkpoint/hi_sam_h.pth --model-type vit_h --input ../../DATASETS/READ_2016/Test/Images --output ../../DATASETS/READ_2016/Test/labels --patch_mode 
+
+CUDA_VISIBLE_DEVICES=3 python demo_hisam.py --checkpoint ../../logs/Hi-SAM_Doc/pretrained_checkpoint/hi_sam_h.pth --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --model-type vit_h --input ../../DATASETS/Bentham/val/Images --output ../../DATASETS/Bentham/val/labels --patch_mode
+
+
+
+python train.py --checkpoint ./pretrained_checkpoint/sam_vit_l_0b3195.pth --model-type vit_l --output work_dirs/hi_sam_l/ --batch_size_train 1 --lr_drop_epoch 130 --max_epoch_num 150 --train_datasets read2016_train --val_datasets read2016_val --hier_det --skip_words 1 --data_root ../../DATASETS --pretrained_path ../../DATASETS --find_unused_params
+
+
+
+
+
+
+
+
+############# FOR Training #################
+torchrun --nproc_per_node=8 train.py \
+  --checkpoint ./pretrained_checkpoint/sam_vit_l_0b3195.pth \
+  --model-type vit_l \
+  --output work_dirs/hi_sam_l/ \
+  --batch_size_train 1 \
+  --lr_drop_epoch 130 \
+  --max_epoch_num 150 \
+  --train_datasets read2016_train \
+  --val_datasets read2016_val \
+  --hier_det \
+  --skip_words 1 \
+  --data_root ../../DATASETS \
+  --pretrained_path
+  --find_unused_params \
+  --wandb 1
+
+
+
+
+torchrun --nproc_per_node=1 train.py \
+  --checkpoint /home/x_gapat/PROJECTS/logs/Hi-SAM_Doc/pretrained_checkpoint/sam_vit_l_0b3195.pth \
+  --model-type vit_l \
+  --output /home/x_gapat/PROJECTS/logs/Hi-SAM_Doc/1_2025-07-17_ID_13803100/saved_model \
+  --batch_size_train 1 \
+  --lr_drop_epoch 130 \
+  --max_epoch_num 150 \
+  --train_datasets read2016_train \
+  --val_datasets read2016_val \
+  --hier_det \
+  --skip_words 1 \
+  --data_root /proj/document_analysis/users/shared/ \
+  --pretrained_path /home/x_gapat/PROJECTS/logs/Hi-SAM_Doc/pretrained_checkpoint \
+  --find_unused_params \
+  --wandb 1
+
+
+CUDA_VISIBLE_DEVICES=1,2,4,5 torchrun --nproc_per_node=4 codes/Hi-SAM_Doc/train.py \
+  --checkpoint /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/pretrained_checkpoint/sam_vit_b_01ec64.pth \
+  --model-type vit_b \
+  --output /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/exp1/saved_model \
+  --batch_size_train 1 \
+  --lr_drop_epoch 130 \
+  --max_epoch_num 150 \
+  --train_datasets read2016_train \
+  --val_datasets read2016_val \
+  --hier_det \
+  --skip_words 1 \
+  --data_root /home/gayapath/PROJECTS/DATASETS \
+  --pretrained_path /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/pretrained_checkpoint \
+  --find_unused_params
+
+
+CUDA_VISIBLE_DEVICES=1 torchrun --nproc_per_node=1 codes/Hi-SAM_Doc/train.py \
+  --checkpoint /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/pretrained_checkpoint/sam_vit_h_4b8939.pth \
+  --model-type vit_h \
+  --output /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/exp1/saved_model \
+  --batch_size_train 1 \
+  --lr_drop_epoch 130 \
+  --max_epoch_num 150 \
+  --train_datasets read2016_train \
+  --val_datasets read2016_val \
+  --hier_det \
+  --skip_words 1 \
+  --data_root /home/gayapath/PROJECTS/DATASETS \
+  --pretrained_path /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/pretrained_checkpoint \
+  --find_unused_params

@@ -1,0 +1,102 @@
+CUDA_VISIBLE_DEVICES=5 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/62_2025-10-09_ID_14263371/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/output_images --dataset ctw1500
+
+CUDA_VISIBLE_DEVICES=6 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/62_2025-10-09_ID_14263371/saved_model/READ_2016_best.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/output_images --dataset ctw1500 
+
+
+
+CUDA_VISIBLE_DEVICES=7 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/62_2025-10-09_ID_14263371/saved_model/final_epoch_1500.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/output_images --dataset ctw1500  
+
+
+
+
+CUDA_VISIBLE_DEVICES=7 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/62_2025-10-09_ID_14263371/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/output_images --dataset ctw1500 
+
+
+
+CUDA_VISIBLE_DEVICES=0 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/sample_output/H060/READ_2016 --dataset ctw1500 --save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H060/READ_2016_boxes
+ 
+CUDA_VISIBLE_DEVICES=6 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/sample_output/H057/READ_2016 --dataset ctw1500 --save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H057/READ_2016_boxes
+ 
+
+
+
+CUDA_VISIBLE_DEVICES=5 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Validation/Images --output ../../logs/Hi-SAM_Doc/sample_output/H060/READ_2016 --dataset ctw1500 --results_log results_score_threshs_H060.txt
+
+CUDA_VISIBLE_DEVICES=3 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Validation/Images --output ../../logs/Hi-SAM_Doc/sample_output/H057/READ_2016 --dataset ctw1500 --results_log results_score_threshs_H057.txt
+
+
+
+CUDA_VISIBLE_DEVICES=5 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/sample_output/H060/READ_2016 --dataset ctw1500 --results_log results_mAP_Testset_H060.txt --save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H060/READ_2016_boxes --nms 0.65 0.55 --map True 
+
+
+CUDA_VISIBLE_DEVICES=6 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/sample_output/H057/READ_2016 --dataset ctw1500 --results_log results_mAP_Testset_H057.txt --save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H057/READ_2016_boxes --nms 0.2 0.35 --map True
+
+
+CUDA_VISIBLE_DEVICES=5 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/Validation/Images --output ../../logs/Hi-SAM_Doc/out --dataset ctw1500 --results_log results_mAP_ValSet_H060.txt --nms 0.65 0.55 --map True 
+
+
+
+## For Sana ###
+CUDA_VISIBLE_DEVICES=5 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../logs/Hi-SAM_Doc/input_images/Sana --output ../../logs/Hi-SAM_Doc/sample_output/H057/Sana/Images --dataset ctw1500 --save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H057/Sana/boxes --nms 0.2 0.35
+
+
+CUDA_VISIBLE_DEVICES=5 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../logs/Hi-SAM_Doc/input_images/Sana --output ../../logs/Hi-SAM_Doc/sample_output/H060/Sana/Images --dataset ctw1500 --save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H060/Sana/boxes --nms 0.65 0.55
+
+
+
+##### Grid Search ###
+
+CUDA_VISIBLE_DEVICES=2 python demo_text_detection_mAP_gridSearch.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATA_DGX2/READ_2016/Validation/Images --output ../../logs/Hi-SAM_Doc/sample_output/H057/READ_2016 --dataset ctw1500 --results_log grid_search_H057_2.txt
+
+
+
+CUDA_VISIBLE_DEVICES=3 python demo_text_detection_mAP_gridSearch.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATA_DGX2/READ_2016/Validation/Images --output ../../logs/Hi-SAM_Doc/sample_output/H060/READ_2016 --dataset ctw1500 --results_log grid_search_H060_F1.txt
+
+
+
+
+--save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H057/IAM/boxes
+--save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H060/IAM/boxes
+
+
+### For READ_2016 ###
+CUDA_VISIBLE_DEVICES=3 python demo_text_detection_mAP_gridSearch.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/READ_2016/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/sample_output/H057/READ_2016 --dataset ctw1500
+
+
+CUDA_VISIBLE_DEVICES=3 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATA_DGX2/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/sample_output/H057/READ_2016/images --dataset ctw1500 --nms 0.6 0.6 --results_log results_Testset_H057.txt --map True --save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H057/READ_2016/boxes
+
+CUDA_VISIBLE_DEVICES=4 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATA_DGX2/READ_2016/Test/Images --output ../../logs/Hi-SAM_Doc/sample_output/H060/READ_2016/images --dataset ctw1500 --nms 0.4 0.45 --results_log results_Testset_H060.txt --map True --save_boxes True --save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H060/READ_2016/boxes
+
+
+
+### For IAM
+CUDA_VISIBLE_DEVICES=3 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/IAM/Page/Test/Images --output ../../logs/Hi-SAM_Doc/sample_output/H057/IAM/Images --dataset ctw1500 --nms 0.6 0.6 --results_log results_mAP_Testset_H057_IAMDataset.txt --map True
+
+CUDA_VISIBLE_DEVICES=3 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/IAM/Page/Val/Images --output ../../logs/Hi-SAM_Doc/sample_output/H060/IAM/Images --dataset ctw1500 --nms 0.45 0.65 --results_log results_mAP_Testset_H060_IAMDataset.txt --map True
+
+CUDA_VISIBLE_DEVICES=1 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/IAM/Page/Test/Images --output ../../logs/Hi-SAM_Doc/sample_output/H060/IAM/Images --dataset ctw1500 --nms 0.4 0.45 --results_log results_mAP_Testset_H060_IAMDataset.txt --map True
+
+
+
+CUDA_VISIBLE_DEVICES=4 python demo_text_detection_mAP_gridSearch.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/IAM/Page/Val/Images --output ../../logs/Hi-SAM_Doc/sample_output/H057/IAM/Images --dataset ctw1500 --results_log grid_search_H057_IAM_mAP.txt
+
+CUDA_VISIBLE_DEVICES=5 python demo_text_detection_mAP_gridSearch.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/IAM/Page/Val/Images --output ../../logs/Hi-SAM_Doc/sample_output/H060/IAM/Images --dataset ctw1500 --results_log grid_search_H060_IAM.txt
+
+
+### NorHandv3
+CUDA_VISIBLE_DEVICES=6 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/NorHandv3/val/images --output ../../logs/Hi-SAM_Doc/sample_output/H057/NorHand/Images --dataset ctw1500 --nms 0.6 0.6 --results_log results_mAP_Val_H057_NorHandDataset.txt --map True
+
+
+CUDA_VISIBLE_DEVICES=7 python demo_text_detection_mAP.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/NorHandv3/val/images --output ../../logs/Hi-SAM_Doc/sample_output/H060/NorHand/Images --dataset ctw1500 --nms 0.4 0.45 --results_log results_mAP_Vaset_H060_NorHandDataset.txt --map True
+
+
+CUDA_VISIBLE_DEVICES=1 python demo_text_detection_mAP_gridSearch.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/NorHandv3/val/images --output ../../logs/Hi-SAM_Doc/sample_output/H057/NorHand/Images --dataset ctw1500 --results_log grid_search_H057_NorHand.txt
+
+CUDA_VISIBLE_DEVICES=2 python demo_text_detection_mAP_gridSearch.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATASETS/NorHandv3/val/images --output ../../logs/Hi-SAM_Doc/sample_output/H060/NorHand/Images --dataset ctw1500 --results_log grid_search_H060_NorHand.txt
+
+
+
+
+CUDA_VISIBLE_DEVICES=3 python demo_text_detection_mAP.py --checkpoint /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/pretrained_checkpoint --input /home/gayapath/PROJECTS/DATA_DGX2/READ_2016/Test/Images --output /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/sample_output/H057/READ_2016/images --save_boxes_dir /home/gayapath/PROJECTS/logs/Hi-SAM_Doc/sample_output/H057/READ_2016/boxes --dataset ctw1500 --nms 0.6 0.6 --results_log results_Testset_H057.txt --save_boxes True --map True --text READ_2016 
+
+

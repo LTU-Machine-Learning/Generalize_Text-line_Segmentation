@@ -1,0 +1,49 @@
+##### GPU Training Script for DGX #####
+
+Use a script file to run
+
+for DGX we use CUDA_VISIBLE_DEVICES=0,1,2,3
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 "$main_script" \
+  --checkpoint "$PRETRAINE_MODEL" \
+  --model-type vit_h \
+  --output "$SAVE_PATH" \
+  --batch_size_train 1 \
+  --lr_drop_epoch 800 \
+  --early_stop 1000 \
+  --max_epoch_num 1000 \
+  --train_datasets read2016_train \
+  --val_datasets read2016_val \
+  --hier_det \
+  --skip_words 1 \
+  --data_root /home/gayapath/PROJECTS/DATA_DGX1/ \
+  --pretrained_path "$PRETRAINE_PATH" \
+  --distributed True \
+  --find_unused_params \
+  --seed 45 \
+  --wandb 1 \
+
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 train3.py --checkpoint ../../logs/Hi-SAM_Doc/pretrained_checkpoint/sam_vit_l_0b3195.pth --model-type vit_l --output ../../logs/Hi-SAM_Doc/out --batch_size_train 1 --lr_drop_patience 200 --early_stop_patience 200 --max_epoch_num 1 --train_datasets read2016_train --val_datasets read2016_val --hier_det --skip_words 1 --data_root /home/gayapath/PROJECTS/DATA_DGX2/ --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --distributed True --find_unused_params --seed 45
+
+
+#### CPU Training script #####
+
+python codes/Hi-SAM_Doc/train2.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/sam_vit_l_0b3195.pth --model-type vit_l --output logs/Hi-SAM_Doc/out --batch_size_train 1 --lr_drop_epoch 130 --max_epoch_num 150 --train_datasets read2016_train --val_datasets read2016_val --hier_det --skip_words 1 --data_root DATASETS --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --find_unused_params --device cpu
+
+CUDA_VISIBLE_DEVICES=4 python train3_5.py --checkpoint ../../logs/Hi-SAM_Doc/pretrained_checkpoint/sam_vit_l_0b3195.pth --model-type vit_l --output ../../logs/Hi-SAM_Doc/out --batch_size_train 1 --lr_drop_epoch 130 --max_epoch_num 150 --train_datasets read2016_train --val_datasets read2016_val --hier_det --skip_words 1 --data_root ../../DATASETS --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --find_unused_params --device cpu
+
+CUDA_VISIBLE_DEVICES=4 python train3_5.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --output ../../logs/Hi-SAM_Doc/out --batch_size_train 1 --lr_drop_epoch 130 --max_epoch_num 150 --train_datasets read2016_train --val_datasets read2016_val --hier_det --skip_words 1 --data_root ../../DATASETS --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --find_unused_params --device cpu
+
+
+
+python train3_5.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --output ../../logs/Hi-SAM_Doc/out --batch_size_train 1 --lr_drop_epoch 130 --max_epoch_num 150 --train_datasets read2016_train --val_datasets read2016_val --hier_det --skip_words 1 --data_root ../../DATASETS --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --find_unused_params --device cpu
+
+
+
+& C:/MyCodes/codes/Hi-SAM_Doc/.venv/Scripts/python.exe c:/MyCodes/codes/Hi-SAM_Doc/train3_5.py --checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth --model-type vit_h --output ../../logs/Hi-SAM_Doc/out --batch_size_train 1 --lr_drop_epoch 130 --max_epoch_num 150 --train_datasets read2016_train --val_datasets read2016_val --hier_det --skip_words 1 --data_root ../../DATASETS --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --find_unused_params --device cpu
+
+
+##### Grid Search ###
+CUDA_VISIBLE_DEVICES=1 python demo_text_detection_mAP_gridSearch.py --checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth --model-type vit_h --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --input ../../DATA_DGX2/READ_2016/Validation/Images --output ../../logs/Hi-SAM_Doc/sample_output/H060/READ_2016 --dataset ctw1500 --results_log grid_search_H060.txt
+

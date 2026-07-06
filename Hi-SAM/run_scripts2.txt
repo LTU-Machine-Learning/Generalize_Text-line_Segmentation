@@ -1,0 +1,91 @@
+CUDA_VISIBLE_DEVICES=1 python demo_hisam.py --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --checkpoint ../../logs/Hi-SAM_Doc/pretrained_checkpoint/hi_sam_h.pth --model-type vit_h --input ../../DATASETS/READ_2016/Training/Images/Seite0003.JPG --output ../../Test/Binarization --patch_mode 
+
+
+python codes/Hi-SAM_Doc/demo_hisam.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/hi_sam_h.pth --model-type vit_h --input DATASETS/READ_2016/Training/Images/Seite0001.png --output Test/Binarization/ --patch_mode 
+
+
+CUDA_VISIBLE_DEVICES=1 python demo_hisam.py --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --checkpoint ../../logs/Hi-SAM_Doc/pretrained_checkpoint/hi_sam_h.pth --model-type vit_h --input ../../Test/Binarization/Seite0002_green.jpeg --output ../../Test/Binarization/Hi-sam_green.png --patch_mode 
+
+
+
+CUDA_VISIBLE_DEVICES=1 python codes/Hi-SAM_Doc/demo_text_detection.py --checkpoint logs/Hi-SAM_Doc/pretrained_checkpoint/READ_2016_best_H_003.pth --model-type vit_h --pretrained_path logs/Hi-SAM_Doc/pretrained_checkpoint --input DATASETS/READ_2016/Training/Images/Seite0003.JPG --output Test/Binarization
+
+
+
+
+
+python train.py --checkpoint ../../logs/Hi-SAM_Doc/pretrained_checkpoint/sam_vit_l_0b3195.pth --model-type vit_l --output work_dirs/hi_sam_l/ --batch_size_train 1 --lr_drop_epoch 130 --max_epoch_num 150 --train_datasets read2016_train --val_datasets read2016_val --hier_det --skip_words 1 --data_root ../../DATASETS --pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint --find_unused_params --device cpu
+
+
+### New BB Generation Script ##
+CUDA_VISIBLE_DEVICES=6 python demo_text_detection_mAP.py \
+--checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth \
+--model-type vit_h \
+--pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint \
+--input ../../DATASETS/NorHandv3/test/cleaned_images \
+--output ../../logs/Hi-SAM_Doc/sample_output/H060/NorHand/images \
+--save_boxes True \
+--save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H060/NorHand/boxes \
+--dataset ctw1500 \
+--exp_id 60 \
+--map True \
+--nms 0.6 0.6 \
+--text Norhand \
+--results_log results_H060_Norhand.txt
+
+CUDA_VISIBLE_DEVICES=2 python demo_text_detection_mAP.py \
+--checkpoint ../../logs/Hi-SAM_Doc/57_2025-09-25_ID_/saved_model/READ_2016_best_mAP.pth \
+--model-type vit_h \
+--pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint \
+--input ../../DATASETS/NorHandv3/test/cleaned_images \
+--output ../../logs/Hi-SAM_Doc/sample_output/H057/NorHand/images \
+--save_boxes True \
+--save_boxes_dir ../../logs/Hi-SAM_Doc/sample_output/H057/NorHand/boxes \
+--dataset ctw1500 \
+--exp_id 57 \
+--map True \
+--nms 0.6 0.6 \
+--text Norhand \
+--results_log results_H057_Norhand.txt
+
+### New Evaluation Script ###
+
+CUDA_VISIBLE_DEVICES=4 python demo_text_detection_mAP_stage1.py \
+--checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth \
+--model-type vit_h \
+--pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint \
+--input ../../DATASETS/READ_2016/Test/Images \
+--output ../../logs/Hi-SAM_Doc/sample_output/H060/NorHand \
+--dataset ctw1500 \
+--exp_id 60 \
+--map True \
+--nms 0.6 0.6 \
+--text READ_2016 \
+--results_log resultsScoresByIoU_READ_2016.txt
+
+CUDA_VISIBLE_DEVICES=3 python demo_text_detection_mAP_stage1.py \
+--checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth \
+--model-type vit_h \
+--pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint \
+--input ../../DATASETS/IAM/Page/Test/Images \
+--output ../../logs/Hi-SAM_Doc/sample_output/H060/out \
+--dataset ctw1500 \
+--exp_id 60 \
+--map True \
+--nms 0.6 0.6 \
+--text IAM \
+--results_log resultsScoresByIoU_IAM.txt
+
+CUDA_VISIBLE_DEVICES=2 python demo_text_detection_mAP_stage1.py \
+--checkpoint ../../logs/Hi-SAM_Doc/60_2025-10-01_ID_14189314/saved_model/READ_2016_best_mAP.pth \
+--model-type vit_h \
+--pretrained_path ../../logs/Hi-SAM_Doc/pretrained_checkpoint \
+--input ../../DATASETS/NorHandv3/test/cleaned_images \
+--output ../../logs/Hi-SAM_Doc/sample_output/H060/out \
+--dataset ctw1500 \
+--exp_id 60 \
+--map True \
+--nms 0.6 0.6 \
+--text NorhandV3 \
+--results_log resultsScoresByIoU_NorhandV3.txt
+

@@ -1,0 +1,8 @@
+PAD_STR_TOKEN = "<pad>"
+SOS_STR_TOKEN = "<sos>"
+EOS_STR_TOKEN = "<eos>"
+BLANK_STR_TOKEN = "<BLANK>"
+
+NOT_DEFINE_STR_TOKEN = "Not_Define"
+
+CTC_PAD = 10000
