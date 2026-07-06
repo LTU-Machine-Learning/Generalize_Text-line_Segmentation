@@ -1,6 +1,8 @@
 # Generalize_Text-line_Segmentation
 Generalization of Text Line Segmentation for HTR in Historical Documents
 
+![example](Hi-SAM/samples/comparison_figure-Hi-SAM.png)
+
 # Text-line_Segmentation Model Training
 
 ## Hi-SAM Training

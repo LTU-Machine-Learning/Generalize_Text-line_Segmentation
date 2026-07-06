@@ -15,15 +15,6 @@ This was copied from https://github.com/ymy-k/Hi-SAM which is the official repos
 - Updated code to run with torchrun (for multi GPU training)
 
 
-## :sparkles: Highlight
-
-![overview](.asset/overview.jpg)
-
-- **Hierarchical Text Segmentation.** Hi-SAM unifies text segmentation across stroke, word, text-line, and paragraph levels. Hi-SAM also achieves layout analysis as a by-product.
-
-- **Automatic and Interactive.** Hi-SAM supports both automatic mask generation and interactive promptable mode. Given a single-point prompt, Hi-SAM provides word, text-line, and paragraph masks.
-
-- **High-quality Pixel-level Text (Stroke) Segmentation & Labeling Assistant.** High-quality pixel-level text (stroke) segmentation by introducing mask feature of 1024×1024 resolution with minimal modification in SAM's original mask decoder. Our contributed stroke level annotations for [HierText](https://github.com/google-research-datasets/hiertext) can be downloaded following [data_preparation.md](datasets/data_preparation.md). Some examples are displayed here:
 
 ![example](samples/comparison_figure-Hi-SAM.png)
 
