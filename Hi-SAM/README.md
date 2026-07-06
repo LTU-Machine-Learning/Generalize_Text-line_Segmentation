@@ -31,7 +31,7 @@ This was copied from https://github.com/ymy-k/Hi-SAM which is the official repos
 
 ## Checkpoints
 
-Please download the following pre-train weights in-order to train the model.
+Please download the following pre-train weights in-order to train the model and copy them to the checkpoint directory .
 
 |Model|Weights|
 |:------:|:------:|
@@ -72,16 +72,6 @@ python demo_hisam.py \
 image_binarization.ipynb
 ```
 
-:star: **`Note`:** 
-
-1. For faster downloading and saving storage, **above checkpoints do not contain the parameters in SAM's ViT image encoder**. Please follow [segment-anything](https://github.com/facebookresearch/segment-anything) to achieve `sam_vit_b_01ec64.pth`, `sam_vit_l_0b3195.pth`, `sam_vit_h_4b8939.pth` and put them in `pretrained_checkpoint/` for loading the frozen parameters in ViT image encoder.
-2. **To train Hi-SAM in yourself, in addition to download the SAM weights, please also download the isolated mask decoder weights and put them in `pretrained_checkpoint/` for initializing H-Decoder (or you can separate the mask decoder part from SAM weights in yourself).** [vit_b_maskdecoder.pth](https://1drv.ms/u/s!AimBgYV7JjTlgcth1ceH68P-vOF87g?e=lK2bIL) & [vit_l_maskdecoder.pth](https://1drv.ms/u/s!AimBgYV7JjTlgctjx03utTjx31EexA?e=HG7zZD) & [vit_h_maskdecoder.pth](https://1drv.ms/u/s!AimBgYV7JjTlgctig8BXzlCQaPm1ng?e=6XOCid) from [segment-anything](https://github.com/facebookresearch/segment-anything), [vit_s_maskdecoder.pth](https://1drv.ms/u/s!AimBgYV7JjTlgctkk7xz198vz5TOhQ?e=sCfhYm) from [EfficientSAM](https://github.com/yformer/EfficientSAM). For example, if you want to train Hi-SAM-L, it looks like this in `pretrained_checkpoint/`:
-
-```
-|- pretrained_checkpoint
-|  |- sam_vit_l_0b3195.pth
-|  └  vit_l_maskdecoder.pth
-```
 
 
 
@@ -89,13 +79,6 @@ image_binarization.ipynb
 
 
 ### **3. Training**
-
-
-## 💗 Acknowledgement
-
-- [segment-anything](https://github.com/facebookresearch/segment-anything), [EfficientSAM](https://github.com/yformer/EfficientSAM)
-- [HierText](https://github.com/google-research-datasets/hiertext), [Total-Text](https://github.com/cs-chan/Total-Text-Dataset), [TextSeg](https://github.com/SHI-Labs/Rethinking-Text-Segmentation)
-- The codebase is partially from [sam-hq](https://github.com/SysCV/sam-hq)
 
 
 ## :black_nib: Citation

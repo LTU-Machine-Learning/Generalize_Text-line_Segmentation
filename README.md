@@ -24,7 +24,40 @@ The code for step 2 and 3 are in a Notebook file in the following path:
 Hi-SAM/image_binarization.ipynb
 ```
 
-## Grid-Search
+### Training Script
+To train Hi-SAM, please use the following script. 
+Also, makesure to copy pre-train weights to the pretrained_checkpoint directory.
+
+|Model|Weights|
+|:------:|:------:|
+|Hi-SAM-H|[OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgcoxoNjp1IG7xitzrg?e=0z4QhJ)|
+|Mask-Decoder| [OneDrive](https://1drv.ms/u/s!AimBgYV7JjTlgctig8BXzlCQaPm1ng?e=6XOCid)|
+|ViT Encoder|[SAM](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)
+
+
+```
+torchrun --nproc_per_node=6 train3_universal_2.py \
+  --checkpoint "../../logs/Hi-SAM_Doc/pretrained_checkpoint/sam_vit_h_4b8939.pth" \
+  --model-type vit_h \
+  --output "../../logs/Hi-SAM_Doc/out" \
+  --batch_size_train 1 \
+  --lr_drop_patience 200 \
+  --early_stop_patience 200 \
+  --max_epoch_num 3000 \
+  --lr 1e-4 \
+  --train_datasets read2016_train \
+  --val_datasets read2016_val \
+  --img_ext jpg \
+  --hier_det \
+  --skip_words 1 \
+  --data_root /home/x_gapat/PROJECTS/DATASETS/NorHandV3_331861 \
+  --pretrained_path "../../logs/Hi-SAM_Doc/pretrained_checkpoint \
+  --distributed True \
+  --find_unused_params \
+  --seed 15 \
+```
+
+### Grid-Search
 We performed a grid search on the source-domain validation set to determine the optimal thresholds for each model. Specifically, we optimized the score and NMS thresholds for Hi-SAM using the F1 score. The selected thresholds were then used for all out-of-domain (OOD) evaluations. We use Hungarian Algoritm to find the best matching pair of GT and prediction boxes (Please find the more details in this article: [https://medium.com/p/212b8c3a9c5e](https://medium.com/p/212b8c3a9c5e)). 
 
 Grid search script:
