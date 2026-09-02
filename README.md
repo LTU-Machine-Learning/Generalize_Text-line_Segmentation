@@ -5,6 +5,8 @@ Generalization of Text Line Segmentation for HTR in Historical Documents
 
 You can download the Hi-SAM and YOLO models' wights trained on the mixed dataset from the URL below. Since Hi-SAM training is computationally expensive, you can use our pretrained weights to detect text lines in unseen documents.
 
+[Model Weights](https://zenodo.org/records/22248705)
+
 # Text-line_Segmentation Model Training
 
 ## Hi-SAM Training
